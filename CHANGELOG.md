@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.2
+
+**Fixed**
+- Corrected the contact email in the About window (sihabsahariarcse@gmail.com).
+- Links now point to the new site address, https://sihabsahariar.com/Umbra/ (the old github.io address still redirects).
+
 ## 1.0.1
 
 **Fixed**

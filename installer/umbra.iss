@@ -3,12 +3,12 @@
 ; file in the Inno Setup IDE. Output: dist\Umbra-Setup.exe
 
 #ifndef AppVersion
-  #define AppVersion "1.0.1"
+  #define AppVersion "1.0.2"
 #endif
 #define AppName "Umbra"
 #define AppExe "Umbra.exe"
 #define AppPublisher "Sihab Sahariar"
-#define AppURL "https://sihabsahariar.github.io/Umbra/"
+#define AppURL "https://sihabsahariar.com/Umbra/"
 #define RepoURL "https://github.com/SihabSahariar/Umbra"
 
 [Setup]

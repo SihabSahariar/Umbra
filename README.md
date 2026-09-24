@@ -9,7 +9,7 @@
 
 <p align="center">
   <a href="https://github.com/SihabSahariar/Umbra/releases/latest/download/Umbra-Setup.exe">Download</a> ·
-  <a href="https://sihabsahariar.github.io/Umbra/">Website &amp; manual</a> ·
+  <a href="https://sihabsahariar.com/Umbra/">Website &amp; manual</a> ·
   <a href="#for-developers">Developers</a>
 </p>
 
@@ -34,7 +34,7 @@ Umbra uses your webcam and on-device face tracking to notice when you're not loo
 3. Follow the calibration wizard that opens on first launch: look at the centre and edges of your screen, then away. Press <kbd>Space</kbd> for each step.
 4. That's it. Press <kbd>F8</kbd> to switch protection on or off, and right-click the tray icon for settings.
 
-Requires Windows 10 or 11 and a webcam. The full manual, with screenshots and troubleshooting, is on the [website](https://sihabsahariar.github.io/Umbra/#manual).
+Requires Windows 10 or 11 and a webcam. The full manual, with screenshots and troubleshooting, is on the [website](https://sihabsahariar.com/Umbra/#manual).
 
 ## For developers
 
@@ -96,4 +96,4 @@ Umbra is free software under the [GNU General Public License v3.0](LICENSE). You
 
 ## Author
 
-**Sihab Sahariar**: [sihabhabsahariarcse@gmail.com](mailto:sihabhabsahariarcse@gmail.com) · [LinkedIn](https://www.linkedin.com/in/sihabsahariar/)
+**Sihab Sahariar**: [sihabsahariarcse@gmail.com](mailto:sihabsahariarcse@gmail.com) · [LinkedIn](https://www.linkedin.com/in/sihabsahariar/)
