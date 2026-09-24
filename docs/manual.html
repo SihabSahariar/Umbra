@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Umbra manual</title>
+  <meta name="description" content="How to install, calibrate and use Umbra, the privacy screen for Windows that hides your display when you look away.">
+  <meta name="theme-color" content="#0F0F13">
+  <link rel="icon" href="assets/brand/favicon.ico" sizes="any">
+  <link rel="icon" href="assets/brand/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="mark" viewBox="0 0 100 100"><path d="M26 18A40 40 0 1 0 74 18A30 30 0 1 1 26 18Z"/></symbol>
+</svg>
+
+<header class="nav scrolled" id="nav" data-solid>
+  <div class="wrap nav-inner">
+    <a class="brand" href="index.html" aria-label="Umbra home"><svg class="brand-mark"><use href="#mark"/></svg><span>umbra</span></a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="index.html#how">How it works</a>
+      <a href="index.html#features">Features</a>
+      <a href="index.html#privacy">Privacy</a>
+      <a href="manual.html" aria-current="page">Manual</a>
+    </nav>
+    <a class="btn btn-light btn-sm nav-cta" href="https://github.com/SihabSahariar/Umbra/releases/latest/download/Umbra-Setup.exe">Download</a>
+  </div>
+</header>
+
+<main>
+  <div class="doc-hero">
+    <div class="wrap">
+      <p class="kicker">Manual</p>
+      <h1>How to use Umbra</h1>
+      <p>Everything from installing to fine-tuning. Most people only need the first two sections.</p>
+    </div>
+  </div>
+
+  <div class="wrap doc">
+    <nav class="toc" aria-label="Manual contents">
+      <a href="#install">Install</a>
+      <a href="#calibrate">Calibrate</a>
+      <a href="#daily">Everyday use</a>
+      <a href="#tray">The tray icon</a>
+      <a href="#settings">Settings</a>
+      <a href="#troubleshooting">Troubleshooting</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#uninstall">Uninstall</a>
+    </nav>
+
+    <article class="prose">
+      <section id="install">
+        <h2><span class="num">01</span>Install</h2>
+        <ol>
+          <li>Download <a href="https://github.com/SihabSahariar/Umbra/releases/latest/download/Umbra-Setup.exe"><code>Umbra-Setup.exe</code></a>.</li>
+          <li>Run it. If Windows SmartScreen says it "protected your PC", choose <em>More info → Run anyway</em>. The installer isn't code-signed yet.</li>
+          <li>Follow the wizard. You can tick <em>Start Umbra when I sign in to Windows</em> and add a desktop shortcut.</li>
+          <li>Umbra appears as a crescent in the system tray. Click the <kbd>^</kbd> arrow near the clock if you don't see it.</li>
+        </ol>
+        <p class="callout"><strong>Needs:</strong> Windows 10 or 11 and a webcam. Setup installs just for you by default, so no administrator rights are needed. Prefer no installer? Get the <a href="https://github.com/SihabSahariar/Umbra/releases/latest/download/Umbra-win64.zip">portable zip</a>, extract it anywhere and run <code>Umbra.exe</code>.</p>
+      </section>
+
+      <section id="calibrate">
+        <h2><span class="num">02</span>Calibrate</h2>
+        <p>The calibration wizard opens the first time you start Umbra. It takes about a minute and makes detection fit you, your chair and wherever your camera sits.</p>
+        <ol>
+          <li><strong>Centre and edges:</strong> look at the amber dot in the centre, then at the arrows on the left, right, top and bottom edges of your screen. Press <kbd>Space</kbd> to record each one.</li>
+          <li><strong>Look away:</strong> turn your head left, right, up and down, as you would when you're not using the screen. A beep marks the start and end of each recording, so you know when to look back.</li>
+          <li><strong>Eyes only:</strong> keep your head still and glance to the side, past the screen.</li>
+          <li>Check your personal limits on the summary screen and click <strong>Save</strong>.</li>
+        </ol>
+        <figure><img src="assets/img/wizard-edge.png" alt="Calibration wizard asking you to look at the left edge of the screen" loading="lazy" width="1600" height="900"></figure>
+        <p>Rerun it any time from the tray menu (<em>Calibrate…</em>). If you only moved your chair, <em>Camera preview → Re-centre</em> is quicker.</p>
+      </section>
+
+      <section id="daily">
+        <h2><span class="num">03</span>Everyday use</h2>
+        <ul>
+          <li>Work as normal. When you look away, the screen is covered. Look back and it's revealed.</li>
+          <li>Press <kbd>F8</kbd> from any app to turn protection on or off.</li>
+          <li>Need a break? Right-click the tray icon → <em>Pause for</em> → 5, 15, 30 or 60 minutes.</li>
+          <li>Change what covers your screen: tray → <em>When I look away</em> → Blur, Custom image, GIF / video or Solid colour.</li>
+        </ul>
+      </section>
+
+      <section id="tray">
+        <h2><span class="num">04</span>The tray icon</h2>
+        <figure class="narrow"><img src="assets/img/tray-states.png" alt="Tray icon states on dark and light taskbars" loading="lazy" width="600" height="220"></figure>
+        <table>
+          <thead><tr><th>Icon</th><th>Meaning</th></tr></thead>
+          <tbody>
+            <tr><td>Crescent</td><td>Protecting: you're looking at the screen.</td></tr>
+            <tr><td>Amber crescent</td><td>Your screen is hidden right now.</td></tr>
+            <tr><td>Faded crescent</td><td>Paused or turned off.</td></tr>
+            <tr><td>Red dot</td><td>Camera problem. Hover for details. Your screen stays visible.</td></tr>
+          </tbody>
+        </table>
+        <p>Right-click for the menu, or double-click to open Settings. The icon switches between light and dark to match your taskbar.</p>
+      </section>
+
+      <section id="settings">
+        <h2><span class="num">05</span>Settings</h2>
+        <p>Open from the tray: <em>Settings…</em></p>
+        <table>
+          <thead><tr><th>Setting</th><th>What it does</th></tr></thead>
+          <tbody>
+            <tr><td>Protect my screen</td><td>Master on/off switch.</td></tr>
+            <tr><td>Start with Windows</td><td>Launch Umbra quietly when you sign in.</td></tr>
+            <tr><td>Hotkey</td><td>Click the box and press any key combination. Default <kbd>F8</kbd>.</td></tr>
+            <tr><td>Camera</td><td><code>0</code> is your default webcam; try 1, 2… for external cameras.</td></tr>
+            <tr><td>Turn / up / down</td><td>How far you can turn before the screen hides. Calibration sets these for you.</td></tr>
+            <tr><td>Eye tracking</td><td>Also react to sideways glances while your head stays still.</td></tr>
+            <tr><td>Blur after</td><td>How long you must look away first (default 700 ms).</td></tr>
+            <tr><td>Unblur after</td><td>How quickly it comes back (default 150 ms).</td></tr>
+            <tr><td>Nobody in front</td><td>Hide the screen when you leave your desk.</td></tr>
+            <tr><td>Someone else looking</td><td>Hide when a second person faces the screen.</td></tr>
+            <tr><td>Cover style</td><td>Blur, custom image, GIF / video, or solid colour, plus blur strength, darkening and an optional message.</td></tr>
+            <tr><td>Test overlay</td><td>Shows your cover for 3 seconds so you can check it.</td></tr>
+          </tbody>
+        </table>
+        <figure><img src="assets/img/settings-detection.png" alt="Settings window, Detection tab" loading="lazy" width="1120" height="864"></figure>
+      </section>
+
+      <section id="troubleshooting">
+        <h2><span class="num">06</span>Troubleshooting</h2>
+        <details><summary>The screen hides while I'm still reading it</summary>
+          <p>Run <em>Calibrate…</em> again and look at the real edges of your screen during the edge steps. You can also raise the angles or the <em>Blur after</em> delay in Settings → Detection. If it happens when you glance at the keyboard, raise <em>Look down</em>.</p></details>
+        <details><summary>It doesn't hide when I look away</summary>
+          <p>Open <em>Camera preview…</em> and turn your head: the readout shows FOCUSED or AWAY and why. Lower the angles, or rerun calibration and turn further during the look-away steps.</p></details>
+        <details><summary>"Camera is unavailable"</summary>
+          <p>Another app (Teams, Zoom, the Camera app) may be using the webcam, or camera access may be off in Windows Settings → Privacy &amp; security → Camera. For an external webcam, try camera 1 or 2 in Settings → General. Umbra retries every few seconds.</p></details>
+        <details><summary>The hotkey doesn't work</summary>
+          <p>Another program may already use that key. Umbra tells you when it can't register one. Pick a different combination in Settings → General.</p></details>
+        <details><summary>Detection is poor in the dark</summary>
+          <p>The face tracker needs to see your face. Put some light in front of you rather than behind you.</p></details>
+        <details><summary>Does it cover games or full-screen video?</summary>
+          <p>Ordinary windows and borderless-windowed apps, yes. Exclusive-fullscreen games draw above everything and can't be covered.</p></details>
+      </section>
+
+      <section id="privacy">
+        <h2><span class="num">07</span>Privacy</h2>
+        <p>Umbra processes each camera frame in memory to measure head and eye direction, then throws it away. It never records, saves or uploads video or images, and it makes no network connections (the face model ships with the app). When protection is off, the camera is released.</p>
+        <p>Settings are stored in <code>%APPDATA%\Umbra\settings.json</code>. The code is open source: <a href="https://github.com/SihabSahariar/Umbra">github.com/SihabSahariar/Umbra</a>.</p>
+      </section>
+
+      <section id="uninstall">
+        <h2><span class="num">08</span>Uninstall</h2>
+        <p>Go to Windows Settings → Apps → Installed apps → Umbra → Uninstall. Umbra is closed, its start-up entry removed, and you're asked whether to keep your settings.</p>
+      </section>
+    </article>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <div class="footer-brand">
+      <a class="brand" href="index.html"><svg class="brand-mark"><use href="#mark"/></svg><span>umbra</span></a>
+      <p>Made by <strong>Sihab Sahariar</strong>. Free software under the <a href="https://github.com/SihabSahariar/Umbra/blob/main/LICENSE">GPL v3</a>.</p>
+    </div>
+    <nav class="footer-links" aria-label="Footer">
+      <a href="index.html">Home</a>
+      <a href="https://github.com/SihabSahariar/Umbra">GitHub</a>
+      <a href="https://github.com/SihabSahariar/Umbra/releases">Releases</a>
+      <a href="https://www.linkedin.com/in/sihabsahariar/">LinkedIn</a>
+      <a href="mailto:sihabhabsahariarcse@gmail.com">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="site.js"></script>
+</body>
+</html>
