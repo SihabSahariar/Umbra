@@ -13,7 +13,8 @@
   <a href="#for-developers">Developers</a>
 </p>
 
-<p align="center"><img src="docs/assets/img/mode-blur.png" alt="Umbra covering a confidential inbox with a blur" width="760"></p>
+<p align="center"><img src="docs/assets/video/umbra-demo.gif" alt="Real recording: when the person on the webcam turns away or looks at their phone, Umbra blurs the screen; when they look back, it clears" width="760"></p>
+<p align="center"><sub>A real recording: I look away, Umbra hides the screen; I look back, it's there again. The webcam view is in the corner.</sub></p>
 
 Umbra uses your webcam and on-device face tracking to notice when you're not looking at your screen: head turned, eyes elsewhere, or away from your desk. It then covers every monitor until you look back. Video is processed in memory on your PC and is never recorded or uploaded.
 
