@@ -1,0 +1,11 @@
+# Build output - upload dist\Umbra-Setup.exe and dist\Umbra-win64.zip to a GitHub Release instead
+build/
+dist/
+*.spec
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
