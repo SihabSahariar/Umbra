@@ -1,6 +1,7 @@
 """Full-screen privacy overlays (one per monitor) and their backdrops."""
 
 import logging
+import os
 from pathlib import Path
 
 import cv2
@@ -239,7 +240,10 @@ class OverlayWindow(QWidget):
         self.setWindowTitle(f"{APP_NAME} privacy overlay")
         self.setGeometry(screen.geometry())
         self.setWindowOpacity(0.0)
-        self.capture_excluded = exclude_from_capture(int(self.winId()))
+        # UMBRA_CAPTURABLE=1 keeps the cover visible to screen recorders (used for demo
+        # videos); live blur then falls back to a snapshot taken when you look away.
+        capturable = os.environ.get("UMBRA_CAPTURABLE") == "1"
+        self.capture_excluded = False if capturable else exclude_from_capture(int(self.winId()))
         self.anim = QPropertyAnimation(self, b"windowOpacity", self)
         self.anim.finished.connect(self._on_anim_done)
 
@@ -281,7 +285,13 @@ class OverlayWindow(QWidget):
         font.setWeight(QFont.DemiBold)
         p.setFont(font)
         fm = p.fontMetrics()
-        text_w = min(fm.horizontalAdvance(text), int(rect.width() * 0.8))
+        # Measure with the painter's own layout (+ slack): on high-DPI screens the
+        # metrics can undershoot the drawn width, which would elide the whole message.
+        full_w = p.boundingRect(QRectF(0, 0, 10000, 200), Qt.AlignLeft | Qt.TextSingleLine, text).width() + 8
+        max_w = rect.width() * 0.8
+        text_w = min(full_w, max_w)
+        if full_w > max_w:
+            text = fm.elidedText(text, Qt.ElideRight, int(max_w))
         pad, icon = 22, 28
         w = text_w + icon + pad * 3
         h = max(fm.height(), icon) + pad * 1.4
@@ -298,7 +308,7 @@ class OverlayWindow(QWidget):
 
         p.setPen(QColor(brand.PAPER))
         text_rect = QRectF(ix + icon + pad * 0.8, pill.y(), text_w + 2, pill.height())
-        p.drawText(text_rect, Qt.AlignVCenter | Qt.AlignLeft, fm.elidedText(text, Qt.ElideRight, text_w))
+        p.drawText(text_rect, Qt.AlignVCenter | Qt.AlignLeft | Qt.TextSingleLine, text)
 
 
 class OverlayManager(QObject):

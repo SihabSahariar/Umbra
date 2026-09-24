@@ -82,6 +82,7 @@ class FaceTracker(QThread):
         self._dirty = True
         self._camera_changed = False
         self._preview = False
+        self.clean_preview = False  # True: plain mirrored frames (demo recordings), no debug overlay
         self._calib_until: float | None = None
         self._calib_samples: list[tuple[float, float, float]] = []
 
@@ -222,7 +223,10 @@ class FaceTracker(QThread):
                     last_metrics = now
                     self.metrics.emit(decision)
                 if self._preview:
-                    self.previewFrame.emit(self._render_preview(frame, result, decision, focused))
+                    if self.clean_preview:
+                        self.previewFrame.emit(self._mirrored(frame))
+                    else:
+                        self.previewFrame.emit(self._render_preview(frame, result, decision, focused))
 
             if cap is not None:
                 cap.release()
@@ -274,6 +278,12 @@ class FaceTracker(QThread):
             self._calib_until = None
             self._calib_samples = []
         self.captureFinished.emit(samples)
+
+    @staticmethod
+    def _mirrored(frame) -> QImage:
+        rgb = cv2.cvtColor(cv2.flip(frame, 1), cv2.COLOR_BGR2RGB)
+        h, w = rgb.shape[:2]
+        return QImage(rgb.data, w, h, 3 * w, QImage.Format_RGB888).copy()
 
     @staticmethod
     def _render_preview(frame, result, decision: Decision, focused: bool) -> QImage:

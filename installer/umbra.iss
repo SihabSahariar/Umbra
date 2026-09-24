@@ -3,7 +3,7 @@
 ; file in the Inno Setup IDE. Output: dist\Umbra-Setup.exe
 
 #ifndef AppVersion
-  #define AppVersion "1.0.0"
+  #define AppVersion "1.0.1"
 #endif
 #define AppName "Umbra"
 #define AppExe "Umbra.exe"
