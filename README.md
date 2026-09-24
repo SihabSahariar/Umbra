@@ -13,6 +13,8 @@
   <a href="#for-developers">Developers</a>
 </p>
 
+<p align="center"><a href="https://www.producthunt.com/products/umbra-5?embed=true&amp;utm_source=badge-featured&amp;utm_medium=badge&amp;utm_campaign=badge-umbra-a3c5c015-e0b5-4709-afea-d50c8ecc3d64" target="_blank" rel="noopener noreferrer"><img alt="Umbra - A privacy screen that watches for your attention | Product Hunt" width="250" height="54" src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1259947&amp;theme=light&amp;t=1790245397840"></a></p>
+
 <p align="center"><img src="docs/assets/video/umbra-demo.gif" alt="Real recording: when the person on the webcam turns away or looks at their phone, Umbra blurs the screen; when they look back, it clears" width="760"></p>
 <p align="center"><sub>A real recording: I look away, Umbra hides the screen; I look back, it's there again. The webcam view is in the corner.</sub></p>
 
@@ -96,4 +98,4 @@ Umbra is free software under the [GNU General Public License v3.0](LICENSE). You
 
 ## Author
 
-**Sihab Sahariar**: [sihabsahariarcse@gmail.com](mailto:sihabsahariarcse@gmail.com) · [LinkedIn](https://www.linkedin.com/in/sihabsahariar/)
+**Sihab Sahariar**: [sihabsahariarcse@gmail.com](mailto:sihabsahariarcse@gmail.com) · [LinkedIn](https://www.linkedin.com/in/sihabsahariar/) · [Product Hunt](https://www.producthunt.com/@sihab_sahariar)

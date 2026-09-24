@@ -341,3 +341,9 @@ h2.split { font-size: clamp(2.1rem, 4.6vw, 3.6rem); max-width: 18ch; }
 }
 
 @media (max-width: 720px) { .br-lg { display: none; } }
+
+/* Product Hunt badge */
+.ph-badge { margin-top: 26px; display: flex; justify-content: center; }
+.ph-badge a { display: inline-block; border-radius: 10px; transition: transform .25s var(--ease); }
+.ph-badge a:hover { transform: translateY(-2px); }
+.ph-badge img { width: 250px; height: 54px; }
